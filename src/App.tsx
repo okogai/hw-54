@@ -3,6 +3,7 @@ import './App.css';
 import {Attempts} from './components/Attempts/Attempts.tsx';
 import {ICell} from './types';
 import Cell from './components/cell/Cell.tsx';
+import {ResetButton} from "./components/ResetButton/ResetButton.tsx";
 
 const createItems = (): ICell[] => {
     const items: ICell[] = [];
@@ -36,6 +37,12 @@ const App: React.FC = () => {
         }
     };
 
+    const resetGame = () => {
+        setItems(createItems());
+        setAttempts(0);
+        setGameOver(false);
+    };
+
     return (
         <div>
             <h1 className='heading'>Find the Hidden Ring</h1>
@@ -45,7 +52,8 @@ const App: React.FC = () => {
                     <Cell key={index} cell={cell} index={index} onClick={handleClick} />
                 ))}
             </div>
-            {gameOver ? <div>You win!</div> : null}
+            {gameOver ? <div className='win-msg'>You win!</div> : null}
+            <ResetButton onReset={resetGame} />
         </div>
     );
 };
