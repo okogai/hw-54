@@ -1,5 +1,5 @@
 import React from 'react';
-import {CellProps} from "../../types";
+import {CellProps} from '../../types';
 
 
 const Cell: React.FC<CellProps> = ({ cell, index, onClick }) => {
@@ -8,7 +8,7 @@ const Cell: React.FC<CellProps> = ({ cell, index, onClick }) => {
             className={`cell ${cell.clicked ? 'clicked' : ''}`}
             onClick={() => onClick(index)}
         >
-            {cell.clicked && cell.hasItem ? 'О' : ''}
+            {cell.clicked && cell.hasItem ? '💣' : ''}
         </div>
     );
 };

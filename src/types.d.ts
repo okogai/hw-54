@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface ICell {
     hasItem: boolean;
     clicked: boolean;
