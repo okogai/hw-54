@@ -3,7 +3,7 @@ import './App.css';
 import {Attempts} from './components/Attempts/Attempts.tsx';
 import {ICell} from './types';
 import Cell from './components/cell/Cell.tsx';
-import {ResetButton} from "./components/ResetButton/ResetButton.tsx";
+import {ResetButton} from './components/ResetButton/ResetButton.tsx';
 
 const createItems = (): ICell[] => {
     const items: ICell[] = [];
@@ -24,7 +24,7 @@ const App: React.FC = () => {
     const [gameOver, setGameOver] = useState(false);
 
     const handleClick = (index: number) => {
-        if (!gameOver) {
+        if (!gameOver && !items[index].clicked) {
             const newItems = [...items];
             newItems[index] = { ...newItems[index], clicked: true };
 

@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -10,15 +9,21 @@
 }
 
 .board {
+  width: 450px;
+  height: 450px;
   display: grid;
+  align-content: center;
   justify-content: center;
   grid-template-columns: repeat(6, 60px);
   grid-template-rows: repeat(6, 60px);
   gap: 5px;
   margin-top: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .cell {
+  font-size: 1.5rem;
+  border-radius: 5px;
   width: 60px;
   height: 60px;
   display: flex;
@@ -30,10 +35,6 @@
 
 .cell.clicked {
   background-color: #E8E8E8;
-}
-
-.cell.clicked.hasItem {
-  background-color: gold;
 }
 
 button {
